@@ -4,16 +4,16 @@ const handleUserInput = function(data) {
   if(data === "\u0003") {           // \u0003 maps to ctrl+c input
     process.exit();
   }
-  if(data === "\u0077" || data === "\u0057") {
+  if(data === 'w' || data === 'W') {
     connection.write("Move: up");
   }
-  if(data === "\u0061" || data === "\u0041") {
+  if(data === 'a' || data === 'A') {
     connection.write("Move: left");
   }
-  if(data === "\u0073" || data === "\u0053") {
+  if(data === 's' || data === 'S') {
     connection.write("Move: down");
   }
-  if(data === "\u0064" || data === "\u0044") {
+  if(data === 'd' || data === 'D') {
     connection.write("Move: right");
   }
 };
