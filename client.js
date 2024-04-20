@@ -1,4 +1,3 @@
-const { builtinModules } = require("module");
 const net = require("net");
 
 // establishes a connection with the game server
@@ -12,9 +11,9 @@ const connect = function () {
     console.log("Successfully connected to game server");
     conn.write("Name: BSP");
 
-    setInterval(() => {
-      conn.write("Move: up");
-    }, 50);
+    // setInterval(() => {
+    //   conn.write("Move: up");
+    // }, 50);
     //conn.write("Move: up");
   });
 
