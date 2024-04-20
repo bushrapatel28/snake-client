@@ -4,17 +4,30 @@ const handleUserInput = function(data) {
   if(data === "\u0003") {           // \u0003 maps to ctrl+c input
     process.exit();
   }
-  if(data === 'w' || data === 'W') {
+  const direction = data.toLowerCase();
+  const key = data;
+  
+  if(direction === 'w') {
     connection.write("Move: up");
   }
-  if(data === 'a' || data === 'A') {
+  if(direction === 'a') {
     connection.write("Move: left");
   }
-  if(data === 's' || data === 'S') {
+  if(direction === 's') {
     connection.write("Move: down");
   }
-  if(data === 'd' || data === 'D') {
+  if(direction === 'd') {
     connection.write("Move: right");
+  }
+
+  if(key === ',') {
+    connection.write("Say: Sssslurp!");
+  }
+  if(key === ';') {
+    connection.write("Say: I see you 0_0!");
+  }
+  if(key === '?') {
+    connection.write("Say: Where is my Treat??!!");
   }
 };
 
